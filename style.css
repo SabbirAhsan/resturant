@@ -1,0 +1,66 @@
+body{
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+.container{
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+.navbar {
+    padding: 0.5rem 2rem;
+}
+
+.main-menu{
+	padding: 8px;
+    border-radius: 10px;
+}
+.nav-link:hover {
+    color: black !important;
+}
+
+.main-menu:hover{
+	background-color: #ffffff;
+}
+
+.bg-dark {
+    background-color: #343a4099 !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff;
+}
+
+.slide-image{
+	background-image: url("images/giphy.gif");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	max-width: 100%;
+}
+
+.slide-background-overlay{
+	background-color: rgba(0,0,0,0.5);
+	overflow: hidden;
+}
+
+.slide-text{
+	text-align: center;
+	padding: 230px 0px;
+}
+
+.slide-text h1{
+	color: #ffffff;
+	font-size: 70px;
+	font-family: 'Germania One', cursive;
+}
+
+.slide-text h2{
+	color: #ffffff;
+	font-size: 56px;
+	font-family: 'Germania One', cursive;
+}
