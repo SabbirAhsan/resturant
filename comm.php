@@ -8,29 +8,35 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
    <link rel="stylesheet" href="nav.css">
-    <title>Document</title>
+    <title>Restaurent Comments</title>
     <style>
         .com1{
-             box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px deepskyblue;
-            background-color: #33cccc;
-            padding: 20px 20px;
-         
+            border-bottom: 2px solid red;
+            padding: 10px 0px;
             width: 500px;
             margin: 10px auto;
         }
         
         .l1{
-           font-size: 22px; 
+            font-size: 22px; 
             font-weight: bold;
-            color: white;
+            color: green;
         }
-       
+        .f1{
+          padding: 20px 0px;
+        }
+        .box{
+          padding: 20px 0px;
+          text-align: center;
+        }
         .im45{
-            border: 3px solid;
-            margin-left: 35%;
-            margin-top: 3%;
+            width: 100%;
+            border: 5px solid white;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px gray;\
         }
-        
+        .form-control {
+            padding: 5px !important;
+        }
     </style>
 </head>
 <body>
@@ -65,7 +71,7 @@ ini_set( "display_errors", 0);
 
 
    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-  <a class="navbar-brand"  href="dash.php">Restaurent</a>
+  <a class="navbar-brand"  href="dash.php">Restaurent Review System</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -88,6 +94,11 @@ ini_set( "display_errors", 0);
 </nav>
   
 <div class=" con3 container">
+  <div class="row">
+    <div class="col-md-12 box">
+      <h1>Users Comments</h1>
+    </div>
+    <div class="col-md-6 box-1">
    
 
 <?php
@@ -115,41 +126,39 @@ include_once("connection.php");
         ?>
         <br>
         <div class="f1">
-     <h3 style="text-align:center; color: salmon;"><?php echo $res['resname'];  ?></h3>
-       <br>
-        
-        <form method="post">
-             <div class="form-group" style="margin-left:35%;">
-      
-      <input type="text" class="form-control col-md-6" name="comments">
-      <br>
-      <button type="submit" name="sub" class="btn btn-primary" style="margin-left:42%;">Send</button>
-      </div>
-      <br>
-      <br>
-      
-      <?php
-                 
-           include_once("connection.php");      
-                 
-         $use = $_SESSION['user_name']; 
-        
-                 if(isset($_POST['sub'])){
-                    $comments = $_POST['comments'];
-                     $cql = "INSERT INTO comments(username,resid,comments)
-                                     VALUES('$use','{$res['id']}','$comments')";
-                     $tql = mysqli_query($conn,$cql);
-                     
-                     if($tql){
-                          header('Refresh:0; comm.php');
+          <div class="col-md-12">
+            <h3 style="text-align:left; color: salmon;"><?php echo $res['resname'];  ?></h3><br>
+          </div>
+          <div class="col-md-3" style="float: left;">
+            <h4>Comment: </h4>
+          </div>
+          <div class="col-md-9" style="float: right">
+            <form method="post">
+              <div class="form-group">
+                  <input type="text" class="form-control" name="comments">
+                  <button type="submit" name="sub" class="btn btn-primary" style="margin: 10px 0px;">Send</button>
+              </div>
+            <?php
+            include_once("connection.php");         
+            $use = $_SESSION['user_name']; 
+            
+                     if(isset($_POST['sub'])){
+                        $comments = $_POST['comments'];
+                         $cql = "INSERT INTO comments(username,resid,comments)
+                                         VALUES('$use','{$res['id']}','$comments')";
+                         $tql = mysqli_query($conn,$cql);
+                         
+                         if($tql){
+                              header('Refresh:0; comm.php');
+                         }
                      }
-                 }
-                 
-                 
-                 
-                 ?>
-    </div>
-        </form>
+                ?>
+            </form>
+          </div>
+          </div>
+          </div>
+          <div class="col-md-6">
+        
         <div class="div1">
             <?php
             
@@ -191,7 +200,8 @@ include_once("connection.php");
 
     }
 ?>
-
+</div>
+</div>
 </div>  
   
  

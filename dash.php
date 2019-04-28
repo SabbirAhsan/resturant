@@ -10,7 +10,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
     <link rel="stylesheet" href="nav.css">
-    <title>Document</title>
+    <title>Restaurent Gallery</title>
     <style>
         .a1 {
             text-decoration: none !important;
@@ -56,7 +56,7 @@
 ?>
 
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-            <a class="navbar-brand" href="dash.php">Restaurent</a>
+            <a class="navbar-brand" href="dash.php">Restaurent Review System</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -71,13 +71,6 @@
                     </li>
 
                 </ul>
-                  <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" style="color: white;">Search</button>
-    </form>
-
-
-            </div>
         </nav>
 
 
@@ -96,7 +89,7 @@
  
 
   
-    $sql = "select  S.image, S.resname, S.resdes, S.id FROM addres S";
+    $sql = "select  S.image, S.resname, S.resdes,S.rescity, S.id FROM addres S";
       $rim = mysqli_query($conn,$sql);
 
     
@@ -113,8 +106,8 @@
        
              
         ?>
-                    <div class="col-md-3">
-                        <div class="card" style="margin-top:3%;">
+                    <div class="col-md-3" style="padding:20px 10px;">
+                        <div class="card" style="margin-top:3%;box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px gray;">
                             <div class="r1">
                                 <div class="rati">
 
@@ -122,11 +115,11 @@
 
 
                                 </div>
-                                <h3 style="color:#ff6680; margin-left:3%;">
-                                    <?php echo $res['resname'];?>
+                                <h5 style="color:green;padding: 15px 15px 9px 15px;">
+                                    <?php echo $res['rescity'];?>
                                     <a style="float:right; font-size:17px; color: salmon;">
                                         <?php echo $tes['cast(AVG(rating )as decimal(10,1))']; ?> <i style="color:#00cc66;" class='fas fa-star'></i></a>
-                                </h3>
+                                </h5>
 
 
 
@@ -143,55 +136,27 @@
      ';
     ?>
                             <div class="card-body">
-                                <h5 class="card-title">Moto</h5>
+                                <h3 class="card-title" style="color:#ff6680;">
+                                    <?php echo $res['resname'];?></h3>
                                 <p class="card-text">
                                     <?php echo $res['resdes'];?>
+                                    
                                 </p>
 
 
 
 
                                 <div class="row">
-                                    <div class="col-md-8">
-                                        <a class="a1" href="rating.php?ratingo=1&id=<?php echo $res['id']; ?>">
-     <i class='far fa-star'></i>
-     </a>
-
-                                        <br>
-
-                                        <a class="a1" href="rating.php?ratingt=1&id=<?php echo $res['id']; ?>">
-   <i class='far fa-star'></i>
-     <i class='far fa-star'></i>  
-     </a>
-                                        <br>
-
-                                        <a class="a1" href="rating.php?ratingh=1&id=<?php echo $res['id']; ?>">
-   <i class='far fa-star'></i>
-   <i class='far fa-star'></i>
-   <i class='far fa-star'></i>                           
-    </a>
-
-                                        <br>
-
-                                        <a class="a1" href="rating.php?ratingf=1&id=<?php echo $res['id']; ?>">
-  <i class='far fa-star'></i>
-  <i class='far fa-star'></i>
-  <i class='far fa-star'></i>
-  <i class='far fa-star'></i>
-  </a>
-                                        <br>
-
-                                        <a class="a1" href="rating.php?ratingfi=1&id=<?php echo $res['id']; ?>">
-    <i class='far fa-star'></i>
-    <i class='far fa-star'></i>
-    <i class='far fa-star'></i>
-    <i class='far fa-star'></i>
-      <i class='far fa-star'></i>
-      </a>
+                                    <div class="col-md-12" style="padding-bottom: 10px;">
+                                        <a class="a1" href="rating.php?ratingo=1&id=<?php echo $res['id']; ?>"><i class='far fa-star'></i></a>
+                                        <a class="a1" href="rating.php?ratingt=1&id=<?php echo $res['id']; ?>"><i class='far fa-star'></i></a>
+                                        <a class="a1" href="rating.php?ratingh=1&id=<?php echo $res['id']; ?>"><i class='far fa-star'></i></a>
+                                        <a class="a1" href="rating.php?ratingf=1&id=<?php echo $res['id']; ?>"><i class='far fa-star'></i></a>
+                                        <a class="a1" href="rating.php?ratingfi=1&id=<?php echo $res['id']; ?>"><i class='far fa-star'></i></a>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-12">
 
-                                        <a style="float: right;" href="comm.php?details=1&id=<?php echo $res['id']; ?>">  Comments</a>
+                                        <a style="float: left;" href="comm.php?details=1&id=<?php echo $res['id']; ?>">  Comments</a>
                                         <a style="float:right;" href="details.php?details=1&id=<?php echo $res['id']; ?>">Details</a>
 
                                     </div>
