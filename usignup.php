@@ -88,6 +88,16 @@
 
     <div class="c1 container">
       <div class="row">
+        <div class="col-md-4">
+            <div class="v2">
+              <div class="im1">
+                <img class="img-responsive" src="./imgs/admin-login-images-png-4.png" style="height:100px; width:100px;">  
+              </div>
+              <h1>Signup is totally <label>Free</label> for user.</h1>
+              <h4>Please enter your valid information</h4>
+              <h4>Dont Share your personal information</h4>
+            </div>
+        </div>
         <div class="col-md-8 box-1">
           <form method="post" action="#"  enctype="multipart/form-data">
               <h1>Please Fillup The User Signup Form</h1>
@@ -111,16 +121,6 @@
                   <input name="img" onchange="showImage.call(this)" type="file"/><br><br> 
                   <button type="submit" class="btn btn-primary" name="submit">Submit</button>
           </form>
-        </div>
-        <div class="col-md-4">
-            <div class="v2">
-              <div class="im1">
-                <img class="img-responsive" src="./imgs/admin-login-images-png-4.png" style="height:100px; width:100px;">  
-              </div>
-              <h1>Signup is totally <label>Free</label> for user.</h1>
-              <h4>Please enter your valid information</h4>
-              <h4>Dont Share your personal information</h4>
-            </div>
         </div>
       </div>
     </div>
