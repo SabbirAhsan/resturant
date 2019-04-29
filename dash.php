@@ -75,7 +75,7 @@
 
 
 
-        <div class="container-fluid">
+        <div class="container">
 
             <div class="card-deck" id="cad">
 
@@ -106,7 +106,7 @@
        
              
         ?>
-                    <div class="col-md-3" style="padding:20px 10px;">
+                    <div class="col-md-4" style="padding:20px 10px;">
                         <div class="card" style="margin-top:3%;box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px gray;">
                             <div class="r1">
                                 <div class="rati">
@@ -131,10 +131,12 @@
 
 
                             </div>
+
+                            <a href="details.php?details=1&id=<?php echo $res['id']; ?>">
                             <?php echo'
-               <img style="height:250px; width:auto;"  src="data:image/jpeg;base64,'.base64_encode($res['image'] ).'" height="100" width="150" class="img-responsive" />  
+               <img style="height:200px; width:328;padding:10px;"  src="data:image/jpeg;base64,'.base64_encode($res['image'] ).'" height="100" width="328" class="img-responsive" />  
      ';
-    ?>
+    ?></a>
                             <div class="card-body">
                                 <h3 class="card-title" style="color:#ff6680;">
                                     <?php echo $res['resname'];?></h3>
