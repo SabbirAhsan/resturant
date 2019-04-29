@@ -131,10 +131,12 @@
 
 
                             </div>
+
+                            <a href="details.php?details=1&id=<?php echo $res['id']; ?>">
                             <?php echo'
-               <img style="height:200px; width:auto;padding:10px;"  src="data:image/jpeg;base64,'.base64_encode($res['image'] ).'" height="100" width="150" class="img-responsive" />  
+               <img style="height:200px; width:328;padding:10px;"  src="data:image/jpeg;base64,'.base64_encode($res['image'] ).'" height="100" width="328" class="img-responsive" />  
      ';
-    ?>
+    ?></a>
                             <div class="card-body">
                                 <h3 class="card-title" style="color:#ff6680;">
                                     <?php echo $res['resname'];?></h3>
